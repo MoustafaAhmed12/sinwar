@@ -1,0 +1,92 @@
+<section
+  class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-brand-background to-brand-background/80 pt-16 sm:pt-20 md:pt-24 lg:pt-16"
+  aria-label="Hero Section"
+>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-24">
+      <!-- Left Column - Text Content -->
+      <div class="flex flex-col justify-center space-y-6 lg:space-y-8">
+        <h1
+          #heroTitle
+          class="text-4xl sm:text-4xl mt-8 md:mt-0 md:text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-600 via-purple-600 to-blue-400 bg-clip-text text-transparent"
+        >
+          <span class="block lg:hidden text-5xl">Sinwar</span>
+          <span class="block lg:hidden">for Smart Solutions</span>
+          <span class="hidden lg:block">Sinwar for Smart Solutions</span>
+        </h1>
+        <p
+          #heroSubtitle
+          class="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-gray-600 dark:text-brand-gray-400"
+        >
+          Empowering businesses with innovative technology solutions. We help
+          you transform your ideas into reality with cutting-edge software
+          development and smart solutions.
+        </p>
+        <div #start class="flex items-center">
+          <div class="relative group">
+            <button
+              class="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+            >
+              <span
+                class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              ></span>
+
+              <span
+                class="relative z-10 block px-6 py-3 rounded-xl bg-gray-950"
+              >
+                <div class="relative z-10 flex items-center space-x-2">
+                  <span
+                    class="transition-all duration-500 group-hover:translate-x-1"
+                    >Let's get started</span
+                  >
+                  <svg
+                    class="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        #heroImage
+        class="relative flex items-center justify-center mt-8 lg:mt-0"
+      >
+        <div
+          class="relative w-full h-full overflow-hidden rounded-2xl bg-brand-gray-300 px-4 pt-4 md:rounded-3xl md:px-6 md:pt-6 lg:aspect-[1296/670] lg:p-0"
+        >
+          <video
+            [autoplay]="true"
+            class="relative bottom-0 left-1/2 z-10 w-full h-full -translate-x-1/2 overflow-hidden rounded-t-lg lg:absolute lg:h-full"
+            [loop]="true"
+            playsinline
+            preload="auto"
+            src="https://assets.basehub.com/191e7e6d/8ea9258a063943d01c1454f028b5294b/website-three-mp4.mp4"
+          ></video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Elements -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div
+      class="absolute -right-1/2 top-0 h-full w-full rounded-full bg-gradient-to-br from-brand-primary/10 to-transparent blur-3xl"
+    ></div>
+    <div
+      class="absolute -left-1/2 bottom-0 h-full w-full rounded-full bg-gradient-to-tr from-brand-secondary/10 to-transparent blur-3xl"
+    ></div>
+  </div>
+</section>

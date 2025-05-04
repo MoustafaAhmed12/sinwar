@@ -1,0 +1,263 @@
+<!-- NAVBAR -->
+<nav
+  class="fixed top-4 z-50 w-full lg:top-6"
+  [ngClass]="{
+    'bg-black bg-opacity-80 backdrop-blur-sm': isScrolled(),
+    'bg-transparent': !isScrolled()
+  }"
+>
+  <div #navbar class="container box-border !max-w-[1672px] !px-6 md:!px-9">
+    <div
+      class="relative flex bg-transparent w-full items-center justify-between rounded-lg border border-transparent p-2 transition-[box-shadow_background-color_border-color] duration-300 motion-reduce:transition-none lg:grid lg:grid-cols-[1fr_auto_1fr] lg:rounded-2xl lg:py-[0.4375rem] lg:pr-[0.4375rem]"
+    >
+      <!-- Logo -->
+
+      <div #logo class="pointer-events-none w-36 h-14 pb-2 relative -ml-0.5">
+        <img src="imgs/logo.svg" alt="Sinwar Logo" class="w-full h-full" />
+      </div>
+
+      <!-- Navigation Links -->
+      <ul
+        class="col-start-2 gap-5 px-2 font-mono font-semibold uppercase -tracking-2 text-brand-neutrals-700 dark:text-brand-neutrals-200 xl:gap-6 hidden lg:flex"
+        id="nav-menu"
+      >
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/pricing"
+            >Pricing</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/features"
+            >Features</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/enterprise"
+            >Enterprise</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/blog"
+            >Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/forum"
+            >Forum</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            href="/careers"
+            >Careers</a
+          >
+        </li>
+      </ul>
+
+      <!-- Right side actions -->
+      <div
+        class="col-start-3 hidden w-full justify-end gap-2 lg:flex items-center"
+      >
+        <!-- Theme Toggle -->
+        <button
+          (click)="toggleTheme()"
+          class="relative inline-flex items-center justify-center whitespace-nowrap rounded-lg uppercase disabled:pointer-events-none disabled:opacity-50 overflow-hidden transition-[color,background-color,border-color,opacity] before:absolute before:-inset-0 after:absolute after:inset-0 motion-reduce:transition-none style_secondary__ItJ5o bg-brand-white text-brand-black border border-brand-neutrals-100 dark:border-brand-neutrals-800 hover:!border-brand-gray-400 after:transition-colors after:duration-300 md:px-4 md:py-3.5 font-mono font-semibold text-sm/[1.125rem] tracking-4"
+        >
+          <span class="relative z-10 flex">
+            <svg
+              class="hidden dark:block h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              class="dark:hidden h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Language Toggle -->
+        <button
+          (click)="toggleLanguage()"
+          class="relative inline-flex items-center justify-center whitespace-nowrap rounded-lg uppercase disabled:pointer-events-none disabled:opacity-50 overflow-hidden transition-[color,background-color,border-color,opacity] before:absolute before:-inset-0 after:absolute after:inset-0 motion-reduce:transition-none style_secondary__ItJ5o bg-brand-white text-brand-black border border-brand-neutrals-100 dark:border-brand-neutrals-800 hover:!border-brand-gray-400 after:transition-colors after:duration-300 md:px-4 md:py-3.5 font-mono font-semibold text-sm/[1.125rem] tracking-4"
+        >
+          <span class="relative z-10 flex">{{
+            selectedLang() === "ar" ? "en" : "ar"
+          }}</span>
+        </button>
+
+        <!-- Sign In Button -->
+
+        <!-- Download Button -->
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="lg:hidden">
+        <button
+          #mobileMenuButton
+          class="relative size-6"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menu"
+          (click)="toggleMobileMenu()"
+        >
+          <svg
+            class="styles_hamburger__F4zzS -ml-2 -mt-2 size-10"
+            viewBox="0 0 100 100"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke-width="5.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              class="styles_line__D4vEx styles_top__K0nNB"
+              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+            />
+            <path class="styles_line__D4vEx" d="m 70,50 h -40" />
+            <path
+              class="styles_line__D4vEx styles_bottom__4yuSE"
+              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile menu items -->
+        <div #mobileMenu class="fixed inset-0 z-50 hidden backdrop-blur-sm">
+          <div
+            class="flex h-screen flex-col bg-black items-center justify-center space-y-8 p-4"
+          >
+            <button
+              class="absolute right-6 top-6 p-2"
+              (click)="toggleMobileMenu()"
+              aria-label="Close menu"
+            >
+              <svg
+                class="size-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <ul class="space-y-6 text-center w-full max-w-xs">
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/pricing"
+                  >Pricing</a
+                >
+              </li>
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/features"
+                  >Features</a
+                >
+              </li>
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/enterprise"
+                  >Enterprise</a
+                >
+              </li>
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/blog"
+                  >Blog</a
+                >
+              </li>
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/forum"
+                  >Forum</a
+                >
+              </li>
+              <li class="mobile-menu-item">
+                <a
+                  class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  href="/careers"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+
+            <!-- Mobile theme and language toggles -->
+            <div class="flex gap-4 mt-8">
+              <button
+                (click)="toggleTheme()"
+                class="p-2 rounded-lg border border-brand-neutrals-100 dark:border-brand-neutrals-800"
+              >
+                <svg
+                  class="hidden dark:block h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <svg
+                  class="dark:hidden h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                (click)="toggleLanguage()"
+                class="p-2 rounded-lg border border-brand-neutrals-100 dark:border-brand-neutrals-800"
+              >
+                <span class="text-sm font-semibold">{{
+                  selectedLang() === "ar" ? "ar" : "en"
+                }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

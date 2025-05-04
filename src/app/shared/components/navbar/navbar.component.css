@@ -1,0 +1,102 @@
+:host {
+  --navbar-height: 4rem;
+  --brand-background: #ffffff;
+  --brand-foreground: #000000;
+  --brand-neutrals-100: #f3f4f6;
+  --brand-neutrals-200: #e5e7eb;
+  --brand-neutrals-300: #d1d5db;
+  --brand-neutrals-400: #9ca3af;
+  --brand-neutrals-600: #4b5563;
+  --brand-neutrals-700: #374151;
+  --brand-neutrals-800: #1f2937;
+  --brand-neutrals-900: #111827;
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+  --brand-light-black: #1a1a1a;
+  --brand-light-grey-wash: #f5f5f5;
+  --brand-medium-black: #333333;
+  --brand-gray-400: #9ca3af;
+}
+
+.dark {
+  --brand-background: #111827;
+  --brand-foreground: #ffffff;
+  --brand-neutrals-100: #1f2937;
+  --brand-neutrals-200: #374151;
+  --brand-neutrals-300: #4b5563;
+  --brand-neutrals-400: #6b7280;
+  --brand-neutrals-600: #9ca3af;
+  --brand-neutrals-700: #d1d5db;
+  --brand-neutrals-800: #e5e7eb;
+  --brand-neutrals-900: #f3f4f6;
+  --brand-white: #000000;
+  --brand-black: #ffffff;
+  --brand-light-black: #e5e7eb;
+  --brand-light-grey-wash: #1a1a1a;
+  --brand-medium-black: #cccccc;
+  --brand-gray-400: #6b7280;
+}
+
+/* Hamburger menu styles */
+.styles_hamburger__F4zzS {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.styles_line__D4vEx {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s ease;
+}
+
+.styles_top__K0nNB {
+  transform-origin: center;
+}
+
+.styles_bottom__4yuSE {
+  transform-origin: center;
+}
+
+/* Button styles */
+.style_secondary__ItJ5o {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+  border: 1px solid var(--brand-neutrals-100);
+}
+
+.style_default__4akO1 {
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+}
+
+.style_textShadow__jRTCI {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  :host {
+    --navbar-height: 5rem;
+  }
+}
+
+nav {
+  transition: background-color 0.3s ease-in-out,
+    backdrop-filter 0.3s ease-in-out;
+}

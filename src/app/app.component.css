@@ -1,0 +1,8 @@
+.title {
+  position: relative;
+  z-index: 50;
+  background: #3a79e9;
+  background: linear-gradient(to right, #3a79e9 0%, #0abef2 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
