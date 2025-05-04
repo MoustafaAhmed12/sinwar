@@ -24,7 +24,8 @@ export class HeroComponent implements AfterViewInit {
 
   private animateStart() {
     gsap.from(this.start.nativeElement, {
-      x: 300,
+      y: -20,
+      x: -20,
       opacity: 0,
       duration: 1,
       delay: 0.4,
@@ -33,7 +34,8 @@ export class HeroComponent implements AfterViewInit {
   }
   private animateHeroTitle() {
     gsap.from(this.heroTitle.nativeElement, {
-      x: -500,
+      y: -30,
+      x: -30,
       opacity: 0,
       duration: 1,
       delay: 0.7,
@@ -42,9 +44,10 @@ export class HeroComponent implements AfterViewInit {
   }
   private animateSubtitle() {
     gsap.from(this.heroSubtitle.nativeElement, {
-      y: 30,
+      y: -20,
+      x: -20,
       opacity: 0,
-      duration: 1,
+      duration: 1.1,
       delay: 0.3,
       ease: 'power3.out',
     });
@@ -52,10 +55,10 @@ export class HeroComponent implements AfterViewInit {
 
   private animateImage() {
     gsap.from(this.heroImage.nativeElement, {
-      scale: 0.8,
+      scale: 0.5,
       opacity: 0,
       duration: 1.5,
-      delay: 0.6,
+      delay: 0.3,
       ease: 'power3.out',
     });
   }

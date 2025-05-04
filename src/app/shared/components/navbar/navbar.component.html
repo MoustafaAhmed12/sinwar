@@ -6,7 +6,7 @@
     'bg-transparent': !isScrolled()
   }"
 >
-  <div #navbar class="container box-border !max-w-[1672px] !px-6 md:!px-9">
+  <div #navbar class="container box-border !max-w-[1672px] !pe-6 md:!px-9">
     <div
       class="relative flex bg-transparent w-full items-center justify-between rounded-lg border border-transparent p-2 transition-[box-shadow_background-color_border-color] duration-300 motion-reduce:transition-none lg:grid lg:grid-cols-[1fr_auto_1fr] lg:rounded-2xl lg:py-[0.4375rem] lg:pr-[0.4375rem]"
     >
@@ -72,7 +72,7 @@
         <!-- Theme Toggle -->
         <button
           (click)="toggleTheme()"
-          class="relative inline-flex items-center justify-center whitespace-nowrap rounded-lg uppercase disabled:pointer-events-none disabled:opacity-50 overflow-hidden transition-[color,background-color,border-color,opacity] before:absolute before:-inset-0 after:absolute after:inset-0 motion-reduce:transition-none style_secondary__ItJ5o bg-brand-white text-brand-black border border-brand-neutrals-100 dark:border-brand-neutrals-800 hover:!border-brand-gray-400 after:transition-colors after:duration-300 md:px-4 md:py-3.5 font-mono font-semibold text-sm/[1.125rem] tracking-4"
+          class="relative flex items-center justify-center rounded-lg md:p-2 border bg-white text-gray-950 font-semibold text-sm/[1.125rem] tracking-4"
         >
           <span class="relative z-10 flex">
             <svg
@@ -103,7 +103,7 @@
         <!-- Language Toggle -->
         <button
           (click)="toggleLanguage()"
-          class="relative inline-flex items-center justify-center whitespace-nowrap rounded-lg uppercase disabled:pointer-events-none disabled:opacity-50 overflow-hidden transition-[color,background-color,border-color,opacity] before:absolute before:-inset-0 after:absolute after:inset-0 motion-reduce:transition-none style_secondary__ItJ5o bg-brand-white text-brand-black border border-brand-neutrals-100 dark:border-brand-neutrals-800 hover:!border-brand-gray-400 after:transition-colors after:duration-300 md:px-4 md:py-3.5 font-mono font-semibold text-sm/[1.125rem] tracking-4"
+          class="relative flex items-center justify-center rounded-lg md:py-2.5 md:px-3 border bg-white text-gray-950 font-semibold text-sm/[1.125rem] tracking-4"
         >
           <span class="relative z-10 flex">{{
             selectedLang() === "ar" ? "en" : "ar"
@@ -119,29 +119,24 @@
       <div class="lg:hidden">
         <button
           #mobileMenuButton
-          class="relative size-6"
+          class="relative size-6 cursor-pointer"
           aria-expanded="false"
           aria-controls="mobile-menu"
           aria-label="Menu"
           (click)="toggleMobileMenu()"
         >
           <svg
-            class="styles_hamburger__F4zzS -ml-2 -mt-2 size-10"
-            viewBox="0 0 100 100"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
-            stroke-width="5.5"
             fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
             stroke="currentColor"
+            class="size-6"
           >
             <path
-              class="styles_line__D4vEx styles_top__K0nNB"
-              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
-            />
-            <path class="styles_line__D4vEx" d="m 70,50 h -40" />
-            <path
-              class="styles_line__D4vEx styles_bottom__4yuSE"
-              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
         </button>
@@ -152,7 +147,7 @@
             class="flex h-screen flex-col bg-black items-center justify-center space-y-8 p-4"
           >
             <button
-              class="absolute right-6 top-6 p-2"
+              class="absolute right-6 cursor-pointer top-6 p-2"
               (click)="toggleMobileMenu()"
               aria-label="Close menu"
             >
