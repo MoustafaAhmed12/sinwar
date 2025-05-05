@@ -12,11 +12,13 @@ import { ChangeModeService } from '../../services/change-mode.service';
 import { MultiLangService } from '../../services/multi-lang.service';
 import { TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
+import { RouterModule } from '@angular/router';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -29,6 +31,7 @@ export class NavbarComponent implements AfterViewInit {
   translate = inject(TranslateService);
   selectedLang = signal<string>(this.multiLangService.currenLang() ?? 'ar');
   changeModeService = inject(ChangeModeService);
+  scrollService = inject(ScrollService);
   isDarkMode = signal<boolean>(
     document.documentElement.classList.contains('dark')
   );
