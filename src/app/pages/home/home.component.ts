@@ -11,7 +11,8 @@ import { FaqComponent } from '../../shared/components/faq/faq.component';
 import { PricingComponent } from '../../shared/components/pricing/pricing.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { NavigationDotsComponent } from '../../shared/components/navigation-dots/navigation-dots.component';
-
+import { AiChatComponent } from '../../shared/components/ai-chat/ai-chat.component';
+import { SocialSidebarComponent } from '../../shared/components/social-sidebar/social-sidebar.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -28,6 +29,8 @@ import { NavigationDotsComponent } from '../../shared/components/navigation-dots
     PricingComponent,
     FooterComponent,
     NavigationDotsComponent,
+    AiChatComponent,
+    SocialSidebarComponent,
   ],
   templateUrl: './home.component.html',
 })

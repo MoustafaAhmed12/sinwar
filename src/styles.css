@@ -2,11 +2,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 @custom-variant dark (&:where(.dark, .dark *));
+html,
+body {
+  /* cursor: none; */
+}
+
+#cursor-follower {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #3b82f6; /* أزرق شفاف */
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.15);
+  transition: background 0.2s, width 0.2s, height 0.2s;
+}
 
 @theme {
   --font-arabic: "Alexandria", sans-serif;
   --font-english: "Poppins", sans-serif;
+
+  /* Primary Colors */
+  --color-primary: #3b82f6;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  /* Secondary Colors */
+  --color-secondary: #10b981;
+  --color-secondary-50: #ecfdf5;
+  --color-secondary-100: #d1fae5;
+  --color-secondary-200: #a7f3d0;
+  --color-secondary-300: #6ee7b7;
+  --color-secondary-400: #34d399;
+  --color-secondary-500: #10b981;
+  --color-secondary-600: #059669;
+  --color-secondary-700: #047857;
+  --color-secondary-800: #065f46;
+  --color-secondary-900: #064e3b;
+
+  /* Accent Colors */
+  --color-accent: #8b5cf6;
+  --color-accent-50: #f5f3ff;
+  --color-accent-100: #ede9fe;
+  --color-accent-200: #ddd6fe;
+  --color-accent-300: #c4b5fd;
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+  --color-accent-700: #6d28d9;
+  --color-accent-800: #5b21b6;
+  --color-accent-900: #4c1d95;
 }
+
 .dark {
   @apply bg-black text-gray-50;
 }
@@ -127,3 +186,20 @@ body {
       253px 5082px, 401.5px 5161px, 275px 6375px, 278px 6375px, 426.5px 6480px;
   }
 } */
+
+.customer-message {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.1);
+  padding: 0.75rem 1rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+.dark .customer-message {
+  background: var(--color-primary-700);
+  color: #fff;
+}

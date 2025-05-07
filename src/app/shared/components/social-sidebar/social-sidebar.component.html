@@ -1,0 +1,33 @@
+<!-- Floating Social Sidebar Button (always visible) -->
+<button
+  #iconBtn
+  class="social-sidebar-btn cursor-pointer fixed left-6 bottom-6 z-50 bg-primary text-white rounded-full p-3 shadow-lg flex items-center justify-center hover:bg-primary-700 transition-all"
+  (click)="toggleSidebar()"
+>
+  <!-- Share SVG icon -->
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path
+      fill="currentColor"
+      d="M17.5 10.5a2.5 2.5 0 1 0-2.45-3.02l-5.1 2.04a2.5 2.5 0 1 0 0 3.96l5.1 2.04a2.5 2.5 0 1 0 .9-1.79l-5.1-2.04a2.5 2.5 0 0 0 0-1.38l5.1-2.04A2.5 2.5 0 0 0 17.5 10.5Z"
+    />
+  </svg>
+</button>
+
+<!-- Sidebar with Social Icons (appears above the button) -->
+<div
+  #sidebar
+  class="social-sidebar fixed left-6 bottom-6 z-[60] flex flex-col items-center gap-4 bg-black p-4 rounded-2xl shadow-2xl"
+  style="transform: translateX(-80px); opacity: 0"
+  *ngIf="isSidebarVisible"
+>
+  <a
+    *ngFor="let link of socialLinks"
+    class="social-link flex items-center justify-center w-12 h-12 text-2xl duration-500 transform bg-white border-2 border-gray-900 rounded-full cursor-pointer group hover:-translate-y-2 hover:bg-gray-900 hover:text-white"
+    [href]="link.url"
+    target="_blank"
+    [style.color]="link.color"
+    [attr.aria-label]="link.name"
+  >
+    <div [innerHTML]="link.svg"></div>
+  </a>
+</div>
