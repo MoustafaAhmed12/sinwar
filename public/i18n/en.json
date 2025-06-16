@@ -1,7 +1,66 @@
 {
-  "HOME": {
-    "TITLE": "Welcome to our website!",
-    "DESCRIPTION": "This is the site where you can find the best software.",
-    "CHANGE_LANG": "Change Language"
+  "NAVBAR": {
+    "LOGO_ALT": "Sinwar Logo",
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "BLOG": "Blog",
+    "TEAM": "Team",
+    "CONTACT": "Contact",
+    "FAQ": "FAQ",
+    "PRICING": "Pricing",
+    "THEME_TOGGLE": "Toggle Theme",
+    "LANGUAGE_TOGGLE": "Toggle Language",
+    "MENU": "Menu",
+    "CLOSE_MENU": "Close Menu"
+  },
+  "HERO": {
+    "TITLE_SMALL": "Sinwar",
+    "TITLE": "for Smart Solutions",
+    "FULL_TITLE": "Sinwar for Smart Solutions",
+    "SUBTITLE": "Empowering businesses with innovative technology solutions. We help you transform your ideas into reality with cutting-edge software development and smart solutions.",
+    "GET_STARTED": "Let's get started"
+  },
+  "SERVICES": {
+    "TITLE": "Our Services",
+    "SUBTITLE": "Discover our comprehensive range of technology solutions designed to help your business grow",
+    "WEB_DEV": {
+      "TITLE": "Web Development",
+      "SUBTITLE": "Creating beautiful and responsive websites",
+      "DESCRIPTION": "Our expert development team builds beautiful and responsive websites designed specifically for your business using the latest technologies"
+    },
+    "MOBILE_APPS": {
+      "TITLE": "Mobile Apps",
+      "SUBTITLE": "iOS and Android solutions",
+      "DESCRIPTION": "Building powerful mobile apps for iOS and Android platforms to reach your customers anywhere and anytime"
+    },
+    "DATA_ANALYTICS": {
+      "TITLE": "Data Analytics",
+      "SUBTITLE": "Transforming data into insights",
+      "DESCRIPTION": "Turn your data into actionable insights through our advanced analytics solutions and make more informed business decisions"
+    }
+  },
+  "FAQ": {
+    "TITLE": "Frequently Asked Questions",
+    "SUBTITLE": "Find answers to common questions about our services and solutions",
+    "Q1": {
+      "TITLE": "What services do you offer?",
+      "ANSWER": "We offer a wide range of services including web development, mobile app development, UI/UX design, and backend development. Our team specializes in creating custom solutions tailored to your specific needs."
+    },
+    "Q2": {
+      "TITLE": "How long does it take to complete a project?",
+      "ANSWER": "Project timelines vary depending on the scope and complexity. We typically complete small projects in 2-4 weeks, medium projects in 1-3 months, and large projects in 3-6 months. We'll provide a detailed timeline during our initial consultation."
+    },
+    "Q3": {
+      "TITLE": "What technologies do you use?",
+      "ANSWER": "We use modern technologies including Angular, React, Node.js, Python, and various databases. Our team stays up-to-date with the latest industry trends and best practices to deliver cutting-edge solutions."
+    },
+    "Q4": {
+      "TITLE": "How do you handle project pricing?",
+      "ANSWER": "We offer flexible pricing models based on project requirements. We can work on a fixed-price basis for well-defined projects or on a time-and-materials basis for more complex, evolving projects. We'll provide a detailed quote after understanding your needs."
+    },
+    "Q5": {
+      "TITLE": "Do you provide ongoing support?",
+      "ANSWER": "Yes, we offer comprehensive support and maintenance services. This includes regular updates, bug fixes, performance optimization, and technical support. We can customize a support package based on your specific needs."
+    }
   }
 }

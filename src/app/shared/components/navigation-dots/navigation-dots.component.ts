@@ -11,8 +11,9 @@ import { ScrollService } from '../../services/scroll.service';
       class="fixed right-8 top-1/2 transform -translate-y-1/2 hidden md:block z-50"
     >
       <div class="flex flex-col gap-4">
+        @for (section of sections; track section.id) {
         <button
-          *ngFor="let section of sections; let i = index"
+          (click)="scrollTo(section.id)"
           (click)="scrollTo(section.id)"
           class="w-3 h-3 rounded-full transition-all duration-300 cursor-pointer"
           [ngClass]="{
@@ -21,6 +22,8 @@ import { ScrollService } from '../../services/scroll.service';
           }"
           [title]="section.name"
         ></button>
+
+        }
       </div>
     </div>
   `,

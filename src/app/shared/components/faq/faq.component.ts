@@ -1,15 +1,25 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-faq',
+  imports: [TranslatePipe],
   templateUrl: './faq.component.html',
 })
 export class FaqComponent implements AfterViewInit {
   @ViewChild('faqSection') faqSection!: ElementRef;
   @ViewChild('faqTitle') faqTitle!: ElementRef;
   @ViewChild('faqGrid') faqGrid!: ElementRef;
+
+  activeIndex: number | null = null;
+
+  constructor(private translate: TranslateService) {}
+
+  toggleAccordion(index: number) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +37,7 @@ export class FaqComponent implements AfterViewInit {
       ease: 'power2.out',
     });
 
-    // Animate FAQ items
+    // Animate FAQ items on scroll only (not on click)
     const faqItems = this.faqGrid.nativeElement.querySelectorAll('.group');
     faqItems.forEach((item: HTMLElement, index: number) => {
       gsap.from(item, {
@@ -43,7 +53,7 @@ export class FaqComponent implements AfterViewInit {
         ease: 'power2.out',
       });
 
-      // Add hover animation
+      // Hover animation
       item.addEventListener('mouseenter', () => {
         gsap.to(item, {
           scale: 1.02,
@@ -59,29 +69,6 @@ export class FaqComponent implements AfterViewInit {
           ease: 'power2.out',
         });
       });
-
-      // Add click animation for FAQ items
-      const button = item.querySelector('button');
-      const answer = item.querySelector('p');
-
-      if (button && answer) {
-        button.addEventListener('click', () => {
-          const isOpen = answer.classList.contains('max-h-0');
-
-          gsap.to(answer, {
-            maxHeight: isOpen ? '1000px' : '0',
-            opacity: isOpen ? 1 : 0,
-            duration: 0.5,
-            ease: 'power2.inOut',
-          });
-
-          gsap.to(button.querySelector('i'), {
-            rotation: isOpen ? 0 : 180,
-            duration: 0.3,
-            ease: 'power2.inOut',
-          });
-        });
-      }
     });
   }
 }

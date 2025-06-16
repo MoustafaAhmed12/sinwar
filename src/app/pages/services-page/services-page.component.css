@@ -1,0 +1,11 @@
+/* يمكنك إضافة تنسيقات خاصة بصفحة الخدمات هنا لاحقًا */
+
+/* تحسينات إضافية للكروت في صفحة الخدمات */
+:host ::ng-deep .service-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+:host ::ng-deep .service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.12);
+}

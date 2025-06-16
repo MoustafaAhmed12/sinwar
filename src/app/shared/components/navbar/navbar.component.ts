@@ -10,15 +10,15 @@ import {
 } from '@angular/core';
 import { ChangeModeService } from '../../services/change-mode.service';
 import { MultiLangService } from '../../services/multi-lang.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { gsap } from 'gsap';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -37,6 +37,7 @@ export class NavbarComponent implements AfterViewInit {
   );
   private isMenuOpen = false;
   isScrolled = signal<boolean>(false);
+  activeSection = signal<string>('hero');
 
   // TODO: change Theme
   toggleTheme() {
@@ -58,6 +59,37 @@ export class NavbarComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     this.isScrolled.set(window.scrollY > 30);
+    this.updateActiveSection();
+  }
+
+  private updateActiveSection() {
+    const sections = [
+      'hero',
+      'services',
+      'blog',
+      'team',
+      'contact',
+      'faq',
+      'pricing',
+    ];
+    const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+
+        if (
+          scrollPosition >= offsetTop &&
+          scrollPosition < offsetTop + offsetHeight
+        ) {
+          console.log(this.activeSection());
+          this.activeSection.set(section);
+          break;
+        }
+      }
+    }
   }
 
   ngAfterViewInit() {
@@ -77,6 +109,7 @@ export class NavbarComponent implements AfterViewInit {
     });
 
     this.animateNavItems();
+    this.updateActiveSection(); // Initial check
   }
 
   toggleMobileMenu() {

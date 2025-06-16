@@ -3,27 +3,33 @@
   aria-label="Hero Section"
   data-speed="0.5"
 >
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 md:px-6">
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-24">
       <!-- Left Column - Text Content -->
-      <div class="flex flex-col justify-center space-y-6 lg:space-y-8">
+      <div
+        class="flex items-center md:items-start flex-col justify-center space-y-6 lg:space-y-8"
+      >
         <h1
           #heroTitle
-          class="text-4xl sm:text-4xl mt-8 md:mt-0 md:text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-[#0abef2] to-[#5354e4] to bg-clip-text text-transparent"
+          class="text-4xl sm:text-4xl text-center md:text-start mt-8 md:mt-0 md:text-5xl lg:text-7xl font-bold text-transparent tracking-tight bg-gradient-to-r from-[#0abef2] to-[#576890] pb-3 bg-clip-text"
           data-speed="0.8"
         >
-          <span class="block lg:hidden text-5xl">Sinwar</span>
-          <span class="block lg:hidden">for Smart Solutions</span>
-          <span class="hidden lg:block">Sinwar for Smart Solutions</span>
+          <span class="block lg:hidden text-5xl">{{
+            "HERO.TITLE_SMALL" | translate
+          }}</span>
+          <span class="block mt-4 lg:hidden">{{
+            "HERO.TITLE" | translate
+          }}</span>
+          <span class="hidden leading-normal lg:block">{{
+            "HERO.FULL_TITLE" | translate
+          }}</span>
         </h1>
         <p
           #heroSubtitle
-          class="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-gray-600 dark:text-brand-gray-400"
+          class="text-base w-full text-center md:text-start sm:w-11/12 md:w-full sm:text-lg md:text-xl lg:text-2xl text-brand-gray-600 dark:text-brand-gray-400"
           data-speed="0.6"
         >
-          Empowering businesses with innovative technology solutions. We help
-          you transform your ideas into reality with cutting-edge software
-          development and smart solutions.
+          {{ "HERO.SUBTITLE" | translate }}
         </p>
         <div #start class="flex items-center" data-speed="0.4">
           <div class="relative group">
@@ -40,12 +46,13 @@
                 <div class="relative z-10 flex items-center space-x-2">
                   <span
                     class="transition-all duration-500 group-hover:translate-x-1"
-                    >Let's get started</span
+                    >{{ "HERO.GET_STARTED" | translate }}</span
                   >
                   <svg
                     class="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
                     data-slot="icon"
                     aria-hidden="true"
+                    [class.rotate-180]="multiLangService.currenLang() === 'ar'"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -75,10 +82,11 @@
             [autoplay]="true"
             class="relative bottom-0 left-1/2 z-10 w-full h-full -translate-x-1/2 overflow-hidden rounded-t-lg lg:absolute lg:h-full"
             [loop]="true"
+            [src]="'imgs/intro.mp4'"
             playsinline
             preload="auto"
-            src="https://assets.basehub.com/191e7e6d/8ea9258a063943d01c1454f028b5294b/website-three-mp4.mp4"
           ></video>
+          <!-- src="https://assets.basehub.com/191e7e6d/8ea9258a063943d01c1454f028b5294b/website-three-mp4.mp4" -->
         </div>
       </div>
     </div>

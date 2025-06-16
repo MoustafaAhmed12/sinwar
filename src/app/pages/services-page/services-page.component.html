@@ -1,0 +1,96 @@
+<section
+  class="pt-28 pb-16 min-h-screen bg-brand-neutrals-50 dark:bg-brand-neutrals-900 transition-colors"
+>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h1
+        class="text-3xl font-bold tracking-tight text-brand-neutrals-900 dark:text-brand-neutrals-100 sm:text-4xl md:text-5xl lg:text-6xl"
+      >
+        خدماتنا
+      </h1>
+      <p
+        class="mt-4 text-lg text-brand-neutrals-600 dark:text-brand-neutrals-400"
+      >
+        نقدم مجموعة متكاملة من الخدمات التقنية باحترافية عالية.
+      </p>
+    </div>
+    <div class="grid gap-10 md:grid-cols-2">
+      @for (service of services; track i; let i = $index) {
+      <div
+        class="relative bg-white dark:bg-dark-bg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 flex flex-col items-start transition hover:shadow-2xl"
+      >
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-4xl">{{ service.icon }}</span>
+          <div>
+            <h2
+              class="text-xl font-bold text-brand-foreground dark:text-brand-foreground"
+            >
+              {{ service.title }}
+            </h2>
+            <p
+              class="text-brand-neutrals-600 dark:text-brand-neutrals-300 text-sm"
+            >
+              {{ service.subtitle }}
+            </p>
+          </div>
+        </div>
+        <p class="text-brand-neutrals-700 dark:text-brand-neutrals-200 mb-4">
+          {{ service.details }}
+        </p>
+        <button
+          (click)="openServiceDetails(i)"
+          class="mt-auto px-4 py-2 rounded bg-brand-foreground text-white dark:bg-brand-neutrals-100 dark:text-neutrals-900 font-semibold shadow transition hover:bg-brand-neutrals-900 hover:text-white dark:hover:bg-brand-neutrals-200"
+        >
+          عرض التفاصيل
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-modal [(isOpen)]="isModalOpen">
+  <div class="p-4">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="text-4xl">{{ selectedService?.icon }}</span>
+      <div>
+        <h2 class="text-2xl font-bold text-light-text dark:text-dark-text">
+          {{ selectedService?.title }}
+        </h2>
+        <p class="text-light-text dark:text-dark-text">
+          {{ selectedService?.subtitle }}
+        </p>
+      </div>
+    </div>
+
+    <p class="text-light-text dark:text-dark-text mb-6">
+      {{ selectedService?.details }}
+    </p>
+
+    <div
+      class="w-16 h-1 bg-light-border dark:bg-dark-border rounded my-6"
+    ></div>
+
+    <div *ngIf="selectedService?.features?.length" class="mb-6">
+      <h3 class="font-semibold mb-3 text-light-text dark:text-dark-text">
+        المميزات:
+      </h3>
+      <ul
+        class="list-disc list-inside space-y-2 text-light-text dark:text-dark-text"
+      >
+        <li *ngFor="let f of selectedService?.features">{{ f }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="selectedService?.steps?.length" class="mb-6">
+      <h3 class="font-semibold mb-3 text-light-text dark:text-dark-text">
+        خطوات العمل:
+      </h3>
+      <ol
+        class="list-decimal list-inside space-y-2 text-light-text dark:text-dark-text"
+      >
+        <li *ngFor="let s of selectedService?.steps">{{ s }}</li>
+      </ol>
+    </div>
+  </div>
+</app-modal>

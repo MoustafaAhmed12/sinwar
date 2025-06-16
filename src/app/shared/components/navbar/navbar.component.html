@@ -1,9 +1,12 @@
 <!-- NAVBAR -->
 <nav
-  class="fixed z-50 w-full backdrop-blur-sm border-b shadow-lg border-gray-700"
+  class="fixed z-50 w-full backdrop-blur-sm border-b shadow-lg"
   [ngClass]="{
-    'bg-black bg-opacity-80 backdrop-blur-sm': isScrolled(),
-    'bg-transparent': !isScrolled()
+    'bg-black bg-opacity-80 backdrop-blur-sm border-dark-border':
+      isScrolled() && isDarkMode(),
+    'bg-white bg-opacity-80 backdrop-blur-sm border-light-border':
+      isScrolled() && !isDarkMode(),
+    'bg-transparent border-transparent': !isScrolled()
   }"
 >
   <div #navbar class="container box-border !max-w-[1672px] !pe-6 md:!px-9">
@@ -11,9 +14,15 @@
       class="relative flex bg-transparent w-full items-center justify-between rounded-lg border border-transparent p-2 transition-[box-shadow_background-color_border-color] duration-300 motion-reduce:transition-none lg:grid lg:grid-cols-[1fr_auto_1fr] lg:rounded-2xl lg:py-[0.4375rem] lg:pr-[0.4375rem]"
     >
       <!-- Logo -->
-
-      <div #logo class="pointer-events-none w-36 h-14 pb-2 relative -ml-0.5">
-        <img src="imgs/logo.svg" alt="Sinwar Logo" class="w-full h-full" />
+      <div #logo class="w-36 h-14 pb-2 relative -ml-0.5">
+        <!-- [src]="isDarkMode() ? 'mgs/logo.svg' : 'imgs/logo.svg'" -->
+        <img
+          routerLink="/"
+          fragment="hero"
+          src="imgs/logo.svg"
+          alt="{{ 'NAVBAR.LOGO_ALT' | translate }}"
+          class="w-full h-full cursor-pointer"
+        />
       </div>
 
       <!-- Navigation Links -->
@@ -23,58 +32,66 @@
       >
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'hero' ? 'active' : ''"
             routerLink="/"
             fragment="hero"
-            >Home</a
+            >{{ "NAVBAR.HOME" | translate }}</a
           >
         </li>
         <li class="nav-item">
+          <!-- routerLink="services" -->
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
             routerLink="/"
             fragment="services"
-            >Services</a
+            [class]="activeSection() === 'services' ? 'active' : ''"
+            >{{ "NAVBAR.SERVICES" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'blog' ? 'active' : ''"
             routerLink="/"
             fragment="blog"
-            >Blog</a
+            >{{ "NAVBAR.BLOG" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'team' ? 'active' : ''"
             routerLink="/"
             fragment="team"
-            >Team</a
+            >{{ "NAVBAR.TEAM" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'contact' ? 'active' : ''"
             routerLink="/"
             fragment="contact"
-            >Contact</a
+            >{{ "NAVBAR.CONTACT" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'faq' ? 'active' : ''"
             routerLink="/"
             fragment="faq"
-            >FAQ</a
+            >{{ "NAVBAR.FAQ" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="transition-colors duration-300 p-2 hover:text-brand-foreground hover:bg-brand-neutrals-100 dark:hover:bg-brand-neutrals-900 rounded-md motion-reduce:transition-none"
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'pricing' ? 'active' : ''"
             routerLink="/"
             fragment="pricing"
-            >Pricing</a
+            >{{ "NAVBAR.PRICING" | translate }}</a
           >
         </li>
       </ul>
@@ -84,9 +101,10 @@
         class="col-start-3 hidden w-full justify-end gap-2 lg:flex items-center"
       >
         <!-- Theme Toggle -->
-        <button
+        <!-- <button
           (click)="toggleTheme()"
-          class="relative flex items-center justify-center rounded-lg md:p-2 border bg-white text-gray-950 font-semibold text-sm/[1.125rem] tracking-4"
+          class="bg-dark-bg dark:bg-light-bg border-dark-border dark:border-light-border text-dark-text dark:text-light-text hover:bg-dark-hover dark:hover:bg-light-hover relative flex items-center justify-center rounded-lg md:p-2"
+          [attr.aria-label]="'NAVBAR.THEME_TOGGLE' | translate"
         >
           <span class="relative z-10 flex">
             <svg
@@ -112,12 +130,13 @@
               />
             </svg>
           </span>
-        </button>
+        </button> -->
 
         <!-- Language Toggle -->
         <button
           (click)="toggleLanguage()"
-          class="relative flex items-center justify-center rounded-lg md:py-2.5 md:px-3 border bg-white text-gray-950 font-semibold text-sm/[1.125rem] tracking-4"
+          class="bg-dark-bg dark:bg-light-bg font-semibold border-dark-border dark:border-light-border text-dark-text dark:text-light-text hover:bg-dark-hover dark:hover:bg-light-hover relative flex items-center justify-center rounded-lg md:py-1.5 px-2.5"
+          [attr.aria-label]="'NAVBAR.LANGUAGE_TOGGLE' | translate"
         >
           <span class="relative z-10 flex">{{
             selectedLang() === "ar" ? "en" : "ar"
@@ -136,7 +155,7 @@
           class="relative size-6 cursor-pointer"
           aria-expanded="false"
           aria-controls="mobile-menu"
-          aria-label="Menu"
+          [attr.aria-label]="'NAVBAR.MENU' | translate"
           (click)="toggleMobileMenu()"
         >
           <svg
@@ -163,7 +182,7 @@
             <button
               class="absolute right-6 cursor-pointer top-6 p-2"
               (click)="toggleMobileMenu()"
-              aria-label="Close menu"
+              [attr.aria-label]="'NAVBAR.CLOSE_MENU' | translate"
             >
               <svg
                 class="size-6"
@@ -183,67 +202,81 @@
             <ul class="space-y-6 text-center w-full max-w-xs">
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'hero'"
                   routerLink="/"
                   fragment="hero"
-                  >Home</a
+                  >{{ "NAVBAR.HOME" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'services'"
                   routerLink="/"
                   fragment="services"
-                  >Services</a
+                  >{{ "NAVBAR.SERVICES" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'blog'"
                   routerLink="/"
                   fragment="blog"
-                  >Blog</a
+                  >{{ "NAVBAR.BLOG" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'team'"
                   routerLink="/"
                   fragment="team"
-                  >Team</a
+                  >{{ "NAVBAR.TEAM" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'contact'"
                   routerLink="/"
                   fragment="contact"
-                  >Contact</a
+                  >{{ "NAVBAR.CONTACT" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'faq'"
                   routerLink="/"
                   fragment="faq"
-                  >FAQ</a
+                  >{{ "NAVBAR.FAQ" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
+                  (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
+                  [class.text-brand-foreground]="activeSection() === 'pricing'"
                   routerLink="/"
                   fragment="pricing"
-                  >Pricing</a
+                  >{{ "NAVBAR.PRICING" | translate }}</a
                 >
               </li>
             </ul>
 
             <!-- Mobile theme and language toggles -->
             <div class="flex gap-4 mt-8">
-              <button
+              <!-- <button
                 (click)="toggleTheme()"
-                class="p-2 rounded-lg border border-brand-neutrals-100 dark:border-brand-neutrals-800"
+                class="bg-dark-bg dark:bg-light-bg border-dark-border dark:border-light-border text-dark-text dark:text-light-text hover:bg-dark-hover dark:hover:bg-light-hover p-2 rounded-lg"
+                [attr.aria-label]="'NAVBAR.THEME_TOGGLE' | translate"
               >
                 <svg
                   class="hidden dark:block h-5 w-5"
@@ -267,11 +300,12 @@
                     d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
                   />
                 </svg>
-              </button>
+              </button> -->
 
               <button
                 (click)="toggleLanguage()"
-                class="p-2 rounded-lg border border-brand-neutrals-100 dark:border-brand-neutrals-800"
+                class="bg-dark-bg dark:bg-light-bg border-dark-border dark:border-light-border text-dark-text dark:text-light-text hover:bg-dark-hover dark:hover:bg-light-hover py-2 px-3 rounded-lg"
+                [attr.aria-label]="'NAVBAR.LANGUAGE_TOGGLE' | translate"
               >
                 <span class="text-sm font-semibold">{{
                   selectedLang() === "ar" ? "ar" : "en"

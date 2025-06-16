@@ -13,6 +13,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 import { NavigationDotsComponent } from '../../shared/components/navigation-dots/navigation-dots.component';
 import { AiChatComponent } from '../../shared/components/ai-chat/ai-chat.component';
 import { SocialSidebarComponent } from '../../shared/components/social-sidebar/social-sidebar.component';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -21,16 +22,12 @@ import { SocialSidebarComponent } from '../../shared/components/social-sidebar/s
     HeroComponent,
     ServicesComponent,
     PortfolioComponent,
-    NavbarComponent,
     BlogComponent,
     TeamComponent,
     ContactComponent,
     FaqComponent,
     PricingComponent,
-    FooterComponent,
     NavigationDotsComponent,
-    AiChatComponent,
-    SocialSidebarComponent,
   ],
   templateUrl: './home.component.html',
 })

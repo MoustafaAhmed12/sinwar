@@ -13,10 +13,21 @@ import { SplitText } from 'gsap/SplitText';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './shared/components/hero/hero.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { AiChatComponent } from './shared/components/ai-chat/ai-chat.component';
+import { SocialSidebarComponent } from './shared/components/social-sidebar/social-sidebar.component';
+import { NavigationDotsComponent } from './shared/components/navigation-dots/navigation-dots.component';
 gsap.registerPlugin(SplitText);
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, HomeComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FooterComponent,
+    NavbarComponent,
+    AiChatComponent,
+    SocialSidebarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
