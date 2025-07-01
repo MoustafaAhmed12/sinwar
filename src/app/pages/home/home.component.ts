@@ -8,7 +8,7 @@ import { BlogComponent } from '../../shared/components/blog/blog.component';
 import { TeamComponent } from '../../shared/components/team/team.component';
 import { ContactComponent } from '../../shared/components/contact/contact.component';
 import { FaqComponent } from '../../shared/components/faq/faq.component';
-import { PricingComponent } from '../../shared/components/pricing/pricing.component';
+import { PricingComponent } from '../../shared/components/pricing/clients.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { NavigationDotsComponent } from '../../shared/components/navigation-dots/navigation-dots.component';
 import { AiChatComponent } from '../../shared/components/ai-chat/ai-chat.component';

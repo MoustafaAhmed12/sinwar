@@ -5,17 +5,27 @@
         #blogTitle
         class="text-3xl font-bold tracking-tight text-brand-neutrals-900 dark:text-brand-neutrals-100 sm:text-4xl md:text-5xl lg:text-6xl"
       >
-        Loved by world-class devs
+        {{ "FEED_BACK.section_title" | translate }}
       </h2>
       <p class="mt-4 text-lg text-gray-400">
-        Engineers all around the world reach for our services by choice.
+        {{ "FEED_BACK.section_description" | translate }}
       </p>
     </div>
-    <div #blogGrid class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <swiper-container
+      effect="cube"
+      grab-cursor="true"
+      centered-slides="true"
+      slides-per-view="2"
+      space-between="30"
+      pagination="true"
+      loop="true"
+      autoplay-delay="4000"
+      class="w-10/12 m-auto"
+    >
       <!-- Testimonial 1 -->
-      <div class="group relative">
+      <swiper-slide class="group relative">
         <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 group-hover:from-purple-500 group-hover:to-blue-500 transition-all duration-500"
+          class="relative p-[1px] text-center rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 group-hover:from-purple-500 group-hover:to-blue-500 transition-all duration-500"
         >
           <div
             class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
@@ -24,12 +34,10 @@
               <p
                 class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
               >
-                "The service is at least a 2x improvement over competitors. It's
-                amazing having an AI pair programmer, and is an incredible
-                accelerator for me and my team."
+                {{ "FEED_BACK.globestone_feedback" | translate }}
               </p>
               <div class="mt-auto">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center py-5 gap-4">
                   <div
                     class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:from-purple-500 group-hover:to-blue-500"
                   ></div>
@@ -37,25 +45,20 @@
                     <h4
                       class="font-semibold text-white group-hover:text-blue-400 transition-colors duration-500"
                     >
-                      Ben Bernard
+                      {{ "FEED_BACK.globestone_name" | translate }}
                     </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      Instacart
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </swiper-slide>
 
       <!-- Testimonial 2 -->
-      <div class="group relative">
+      <swiper-slide class="group relative">
         <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-green-500 to-teal-500 group-hover:from-teal-500 group-hover:to-green-500 transition-all duration-500"
+          class="relative p-[1px] text-center rounded-2xl bg-gradient-to-r from-green-500 to-teal-500 group-hover:from-teal-500 group-hover:to-green-500 transition-all duration-500"
         >
           <div
             class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
@@ -64,12 +67,10 @@
               <p
                 class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
               >
-                "The auto-complete while coding is occasionally so magic it
-                defies reality - about ~25% of the time it is anticipating
-                exactly what I want to do."
+                {{ "FEED_BACK.academia_feedback" | translate }}
               </p>
-              <div class="mt-auto">
-                <div class="flex items-center gap-4">
+              <div class="m-auto">
+                <div class="flex items-center justify-center gap-4">
                   <div
                     class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-500 group-hover:from-teal-500 group-hover:to-green-500"
                   ></div>
@@ -77,25 +78,20 @@
                     <h4
                       class="font-semibold text-white group-hover:text-green-400 transition-colors duration-500"
                     >
-                      Kevin Whinnery
+                      {{ "FEED_BACK.academia_name" | translate }}
                     </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      OpenAI
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </swiper-slide>
 
       <!-- Testimonial 3 -->
-      <div class="group relative">
+      <swiper-slide class="group relative">
         <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition-all duration-500"
+          class="relative p-[1px] text-center rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition-all duration-500"
         >
           <div
             class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
@@ -104,11 +100,10 @@
               <p
                 class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
               >
-                "It's hands down my biggest workflow improvement in years. I
-                love writing code and it's a necessity."
+                {{ "FEED_BACK.jahbaz_feedback" | translate }}
               </p>
-              <div class="mt-auto">
-                <div class="flex items-center gap-4">
+              <div class="m-auto">
+                <div class="flex items-center justify-center gap-4">
                   <div
                     class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500"
                   ></div>
@@ -116,137 +111,15 @@
                     <h4
                       class="font-semibold text-white group-hover:text-purple-400 transition-colors duration-500"
                     >
-                      Sawyer Hood
+                      {{ "FEED_BACK.jahbaz_name" | translate }}
                     </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      Figma
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Testimonial 4 -->
-      <div class="group relative">
-        <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:from-orange-500 group-hover:to-yellow-500 transition-all duration-500"
-        >
-          <div
-            class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
-          >
-            <div class="flex flex-col h-full">
-              <p
-                class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
-              >
-                "It's steps ahead of my brain, proposing multi-line edits so I
-                type 'tab' more than anything else."
-              </p>
-              <div class="mt-auto">
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:from-orange-500 group-hover:to-yellow-500"
-                  ></div>
-                  <div>
-                    <h4
-                      class="font-semibold text-white group-hover:text-yellow-400 transition-colors duration-500"
-                    >
-                      Andrew Milich
-                    </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      Notion
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 5 -->
-      <div class="group relative">
-        <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-red-500 to-pink-500 group-hover:from-pink-500 group-hover:to-red-500 transition-all duration-500"
-        >
-          <div
-            class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
-          >
-            <div class="flex flex-col h-full">
-              <p
-                class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
-              >
-                "It's so good, and literally gets better/more feature-rich every
-                couple of weeks."
-              </p>
-              <div class="mt-auto">
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-pink-500 group-hover:from-pink-500 group-hover:to-red-500"
-                  ></div>
-                  <div>
-                    <h4
-                      class="font-semibold text-white group-hover:text-red-400 transition-colors duration-500"
-                    >
-                      Morgan McGuire
-                    </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      Weights & Biases
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 6 -->
-      <div class="group relative">
-        <div
-          class="relative p-[1px] rounded-2xl bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:from-blue-500 group-hover:to-indigo-500 transition-all duration-500"
-        >
-          <div
-            class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
-          >
-            <div class="flex flex-col h-full">
-              <p
-                class="text-lg text-gray-300 mb-6 group-hover:text-white transition-colors duration-500"
-              >
-                "It's awesome! Someone finally put GPT into a code editor in a
-                seamless way. It's so elegant and easy."
-              </p>
-              <div class="mt-auto">
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:from-blue-500 group-hover:to-indigo-500"
-                  ></div>
-                  <div>
-                    <h4
-                      class="font-semibold text-white group-hover:text-indigo-400 transition-colors duration-500"
-                    >
-                      Andrew McCalip
-                    </h4>
-                    <p
-                      class="text-gray-400 group-hover:text-gray-300 transition-colors duration-500"
-                    >
-                      Varda
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </swiper-slide>
+    </swiper-container>
   </div>
 </section>

@@ -52,13 +52,22 @@
         <li class="nav-item">
           <a
             class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
+            [class]="activeSection() === 'project' ? 'active' : ''"
+            routerLink="/"
+            fragment="project"
+            >{{ "NAVBAR.PROJECTS" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
             [class]="activeSection() === 'blog' ? 'active' : ''"
             routerLink="/"
             fragment="blog"
             >{{ "NAVBAR.BLOG" | translate }}</a
           >
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
             [class]="activeSection() === 'team' ? 'active' : ''"
@@ -66,7 +75,7 @@
             fragment="team"
             >{{ "NAVBAR.TEAM" | translate }}</a
           >
-        </li>
+        </li> -->
         <li class="nav-item">
           <a
             class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
@@ -88,10 +97,10 @@
         <li class="nav-item">
           <a
             class="transition-colors duration-300 p-2 hover:text-brand-foreground rounded-md motion-reduce:transition-none"
-            [class]="activeSection() === 'pricing' ? 'active' : ''"
+            [class]="activeSection() === 'client' ? 'active' : ''"
             routerLink="/"
-            fragment="pricing"
-            >{{ "NAVBAR.PRICING" | translate }}</a
+            fragment="client"
+            >{{ "NAVBAR.client" | translate }}</a
           >
         </li>
       </ul>
@@ -224,20 +233,20 @@
                 <a
                   (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
-                  [class.text-brand-foreground]="activeSection() === 'blog'"
+                  [class.text-brand-foreground]="activeSection() === 'project'"
                   routerLink="/"
-                  fragment="blog"
-                  >{{ "NAVBAR.BLOG" | translate }}</a
+                  fragment="project"
+                  >{{ "NAVBAR.PROJECTS" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
                 <a
                   (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
-                  [class.text-brand-foreground]="activeSection() === 'team'"
+                  [class.text-brand-foreground]="activeSection() === 'blog'"
                   routerLink="/"
-                  fragment="team"
-                  >{{ "NAVBAR.TEAM" | translate }}</a
+                  fragment="blog"
+                  >{{ "NAVBAR.BLOG" | translate }}</a
                 >
               </li>
               <li class="mobile-menu-item">
@@ -263,10 +272,10 @@
                 <a
                   (click)="toggleMobileMenu()"
                   class="block text-2xl font-semibold transition-colors hover:text-brand-foreground py-2"
-                  [class.text-brand-foreground]="activeSection() === 'pricing'"
+                  [class.text-brand-foreground]="activeSection() === 'client'"
                   routerLink="/"
-                  fragment="pricing"
-                  >{{ "NAVBAR.PRICING" | translate }}</a
+                  fragment="client"
+                  >{{ "NAVBAR.client" | translate }}</a
                 >
               </li>
             </ul>

@@ -52,12 +52,12 @@ export class NavigationDotsComponent implements OnInit {
   sections = [
     { id: 'hero', name: 'Home' },
     { id: 'services', name: 'Services' },
-    { id: 'portfolio', name: 'Portfolio' },
+    { id: 'project', name: 'project' },
     { id: 'blog', name: 'Blog' },
-    { id: 'team', name: 'Team' },
+    // { id: 'team', name: 'Team' },
     { id: 'contact', name: 'Contact' },
     { id: 'faq', name: 'FAQ' },
-    { id: 'pricing', name: 'Pricing' },
+    { id: 'client', name: 'Client' },
   ];
 
   currentSection = 'hero';

@@ -1,0 +1,58 @@
+<div id="client" class="container">
+  <div class="text-center mb-16">
+    <h2
+      #faqTitle
+      class="text-4xl font-bold tracking-tight text-brand-neutrals-900 dark:text-brand-neutrals-100 sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
+    >
+      {{ "Client.clients_title" | translate }}
+    </h2>
+    <p
+      class="mt-6 text-xl text-brand-neutrals-600 dark:text-brand-neutrals-400 max-w-2xl mx-auto"
+    >
+      {{ "Client.clients_description" | translate }}
+    </p>
+  </div>
+
+  <div class="flex w-full justify-around items-center gap-4 mb-8">
+    <img
+      src="https://globestonehills.com/wp-content/uploads/2022/09/globe-stone-hills.png"
+      alt="logo"
+      class="size-44"
+    />
+    <img
+      src="https://jahbazacademy.com/assets/img/Logo.png"
+      alt="logo"
+      class="size-44"
+    />
+    <div>
+      <img
+        src="https://academiaglobe.com/images/logo.png"
+        alt="logo"
+        class="rounded-lg"
+      />
+    </div>
+  </div>
+
+  <!-- Advanced Continuous Autoplay with Custom Settings -->
+  <!-- <div class="swiper-container">
+    <swiper-container
+      #swiperAdvanced
+      slides-per-view="auto"
+      space-between="30"
+      loop="true"
+      autoplay-delay="1"
+      autoplay-disable-on-interaction="false"
+      speed="5000"
+      css-mode="false"
+      free-mode="true"
+      free-mode-momentum="false"
+      class="advanced-swiper"
+    >
+      <swiper-slide *ngFor="let slide of advancedSlides" class="slide-auto">
+        <div class="slide-content-advanced">
+          <img [src]="slide.title" />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div> -->
+</div>

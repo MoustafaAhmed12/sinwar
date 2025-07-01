@@ -1,14 +1,48 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from 'emailjs-com';
+import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
+  imports: [FormsModule, TranslatePipe],
   templateUrl: './contact.component.html',
 })
 export class ContactComponent implements AfterViewInit {
+  name = '';
+  email = '';
+  subject = '';
+  message = '';
+
   @ViewChild('contactSection') contactSection!: ElementRef;
   @ViewChild('contactTitle') contactTitle!: ElementRef;
+
+  sendMessage() {
+    const templateParams = {
+      from_name: this.name,
+      to_email: this.email,
+      subject: this.subject,
+      message: this.message,
+      time: new Date().toLocaleString(), // ⬅️ إرسال التاريخ/الوقت
+    };
+
+    emailjs
+      .send(
+        'service_sinwar', // مثال: 'service_gmail'
+        'template_ah6gyl8', // مثال: 'template_sinwar'
+        templateParams,
+        'Si_eb1NXUOKaCbGTn' // مثال: 'oGVK39Hn123AbCdEf'
+      )
+      .then(() => {
+        alert('✅ تم إرسال الرسالة بنجاح!');
+      })
+      .catch((error) => {
+        console.error('❌ خطأ أثناء الإرسال:', error);
+        alert('حدث خطأ أثناء إرسال الرسالة.');
+      });
+  }
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);

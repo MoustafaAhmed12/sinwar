@@ -66,11 +66,11 @@ export class NavbarComponent implements AfterViewInit {
     const sections = [
       'hero',
       'services',
+      'project',
       'blog',
-      'team',
       'contact',
       'faq',
-      'pricing',
+      'client',
     ];
     const scrollPosition = window.scrollY + 100; // Offset for better detection
 

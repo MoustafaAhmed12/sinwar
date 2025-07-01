@@ -5,11 +5,10 @@
         #contactTitle
         class="text-3xl font-bold tracking-tight text-brand-neutrals-900 dark:text-brand-neutrals-100 sm:text-4xl md:text-5xl lg:text-6xl"
       >
-        Get in Touch
+        {{ "CONTACT.contact_title" | translate }}
       </h2>
       <p class="mt-4 text-lg text-gray-400">
-        Have a project in mind? Let's discuss how we can help you achieve your
-        goals
+        {{ "CONTACT.contact_subtitle" | translate }}
       </p>
     </div>
 
@@ -22,66 +21,71 @@
           <div
             class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
           >
-            <form class="space-y-6">
+            <div class="space-y-6">
               <div>
                 <label
                   for="name"
                   class="block text-sm font-medium text-gray-300 mb-2"
-                  >Name</label
+                  >{{ "CONTACT.name" | translate }}</label
                 >
                 <input
                   type="text"
                   id="name"
+                  [(ngModel)]="name"
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                  placeholder="Your name"
+                  [placeholder]="'CONTACT.name_placeholder' | translate"
                 />
               </div>
               <div>
                 <label
                   for="email"
                   class="block text-sm font-medium text-gray-300 mb-2"
-                  >Email</label
+                  >{{ "CONTACT.email" | translate }}</label
                 >
                 <input
                   type="email"
                   id="email"
+                  [(ngModel)]="email"
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                  placeholder="your@email.com"
+                  [placeholder]="'CONTACT.email_placeholder' | translate"
                 />
               </div>
               <div>
                 <label
                   for="subject"
                   class="block text-sm font-medium text-gray-300 mb-2"
-                  >Subject</label
+                  >{{ "CONTACT.subject" | translate }}</label
                 >
                 <input
                   type="text"
                   id="subject"
+                  [(ngModel)]="subject"
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                  placeholder="What's this about?"
+                  [placeholder]="'CONTACT.subject_placeholder' | translate"
                 />
               </div>
               <div>
                 <label
                   for="message"
                   class="block text-sm font-medium text-gray-300 mb-2"
-                  >Message</label
+                  >{{ "CONTACT.message" | translate }}</label
                 >
                 <textarea
                   id="message"
                   rows="4"
+                  [(ngModel)]="message"
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                  placeholder="Your message..."
+                  [placeholder]="'CONTACT.message_placeholder' | translate"
                 ></textarea>
               </div>
               <button
-                type="submit"
+                type="button"
+                (click)="sendMessage()"
                 class="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:from-purple-500 hover:to-blue-500 transition-all duration-500"
               >
-                Send Message
+                {{ "CONTACT.send_message" | translate }}
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -98,19 +102,27 @@
             >
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0">
-                  <i class="fas fa-map-marker-alt text-2xl text-green-400"></i>
+                  <!-- Map Marker SVG -->
+                  <svg
+                    class="w-6 h-6 text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"
+                    />
+                  </svg>
                 </div>
                 <div>
                   <h3
                     class="text-xl font-bold text-white group-hover:text-green-400 transition-colors duration-500 mb-2"
                   >
-                    Our Location
+                    {{ "CONTACT.location" | translate }}
                   </h3>
                   <p
                     class="text-gray-300 group-hover:text-white transition-colors duration-500"
                   >
-                    123 Business Street, Downtown<br />
-                    Cairo, Egypt
+                    {{ "CONTACT.location_description" | translate }}
                   </p>
                 </div>
               </div>
@@ -124,25 +136,75 @@
             class="relative p-[1px] rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition-all duration-500"
           >
             <div
-              class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500"
+              class="bg-[#111111] rounded-2xl p-8 h-full group-hover:bg-[#0a0a0a] transition-all duration-500 space-y-4"
             >
-              <div class="space-y-4">
+              <!-- Phone -->
+              <div class="flex flex-col md:flex-row gap-6">
                 <div class="flex items-center space-x-4">
-                  <i class="fas fa-phone text-2xl text-purple-400"></i>
-                  <p
-                    class="text-gray-300 group-hover:text-white transition-colors duration-500"
+                  <svg
+                    class="w-6 h-6 text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    +20 123 456 7890
-                  </p>
+                    <path
+                      d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.12.45 2.33.69 3.48.69.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.15.24 2.36.69 3.48.13.33.05.7-.21 1.11l-2.36 2.2z"
+                    />
+                  </svg>
+                  <a
+                    href="tel:01070444917"
+                    class="text-gray-300 group-hover:text-white group/item:hover:text-purple-400 transition-colors duration-500 text-lg font-medium hover:underline"
+                  >
+                    01070444917
+                  </a>
                 </div>
                 <div class="flex items-center space-x-4">
-                  <i class="fas fa-envelope text-2xl text-purple-400"></i>
-                  <p
-                    class="text-gray-300 group-hover:text-white transition-colors duration-500"
+                  <svg
+                    class="w-6 h-6 text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    info&#64;sinwar.com
-                  </p>
+                    <path
+                      d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.12.45 2.33.69 3.48.69.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.15.24 2.36.69 3.48.13.33.05.7-.21 1.11l-2.36 2.2z"
+                    />
+                  </svg>
+                  <a
+                    href="tel:01070444916"
+                    class="text-gray-300 group-hover:text-white group/item:hover:text-purple-400 transition-colors duration-500 text-lg font-medium hover:underline"
+                  >
+                    01070444916
+                  </a>
                 </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-center space-x-4">
+                <svg
+                  class="w-6 h-6 text-purple-400"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M4 4h16v2l-8 5-8-5V4zm0 4.25l8 5 8-5V20H4V8.25z" />
+                </svg>
+                <a
+                  href="  mailto:info@sinwar.eg.com"
+                  class="text-gray-300 group-hover:text-white group/item:hover:text-blue-400 transition-colors duration-500 text-lg font-medium hover:underline"
+                >
+                  {{ "info@sinwar.eg.com" }}
+                </a>
+              </div>
+              <div class="flex items-center space-x-4">
+                <svg
+                  class="w-6 h-6 text-purple-400"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M4 4h16v2l-8 5-8-5V4zm0 4.25l8 5 8-5V20H4V8.25z" />
+                </svg>
+                <a
+                  href="mailto:sales@sinwar.eg.com"
+                  class="text-gray-300 group-hover:text-white group/item:hover:text-blue-400 transition-colors duration-500 text-lg font-medium hover:underline"
+                >
+                  {{ "sales@sinwar.eg.com" }}
+                </a>
               </div>
             </div>
           </div>
@@ -159,32 +221,56 @@
               <h3
                 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-500 mb-4"
               >
-                Follow Us
+                {{ "CONTACT.follow_us" | translate }}
               </h3>
               <div class="flex space-x-4">
                 <a
                   href="#"
                   class="text-gray-400 hover:text-yellow-400 transition-colors duration-500"
+                  aria-label="Facebook"
                 >
-                  <i class="fab fa-facebook text-2xl"></i>
+                  <!-- Facebook SVG -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M22 12a10 10 0 10-11.5 9.87v-6.99h-2.5v-2.88h2.5V9.5c0-2.46 1.47-3.82 3.72-3.82 1.08 0 2.22.2 2.22.2v2.44h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.75l-.44 2.88h-2.31v6.99A10 10 0 0022 12z"
+                    />
+                  </svg>
                 </a>
                 <a
                   href="#"
                   class="text-gray-400 hover:text-yellow-400 transition-colors duration-500"
+                  aria-label="Twitter"
                 >
-                  <i class="fab fa-twitter text-2xl"></i>
+                  <!-- Twitter SVG -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M22.46 6c-.77.35-1.6.58-2.46.69a4.25 4.25 0 001.88-2.35 8.43 8.43 0 01-2.7 1.03 4.22 4.22 0 00-7.17 3.85A11.97 11.97 0 013 5.1a4.22 4.22 0 001.31 5.64 4.23 4.23 0 01-1.91-.53v.05a4.24 4.24 0 003.39 4.14 4.26 4.26 0 01-1.9.07 4.23 4.23 0 003.94 2.93A8.49 8.49 0 012 19.54a11.95 11.95 0 006.48 1.9c7.78 0 12.03-6.45 12.03-12.03 0-.18 0-.36-.01-.54A8.6 8.6 0 0024 5.5a8.3 8.3 0 01-2.54.7z"
+                    />
+                  </svg>
                 </a>
                 <a
                   href="#"
                   class="text-gray-400 hover:text-yellow-400 transition-colors duration-500"
+                  aria-label="LinkedIn"
                 >
-                  <i class="fab fa-linkedin text-2xl"></i>
+                  <!-- LinkedIn SVG -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M4.98 3.5A2.5 2.5 0 107.48 6a2.5 2.5 0 00-2.5-2.5zM4 8h3.96v12H4zM10 8h3.8v1.71h.05a4.17 4.17 0 013.75-2.06c4.01 0 4.75 2.64 4.75 6.08v6.27h-3.96V14c0-1.44-.03-3.3-2.01-3.3-2.01 0-2.32 1.57-2.32 3.2v5.1H10V8z"
+                    />
+                  </svg>
                 </a>
                 <a
                   href="#"
                   class="text-gray-400 hover:text-yellow-400 transition-colors duration-500"
+                  aria-label="Instagram"
                 >
-                  <i class="fab fa-instagram text-2xl"></i>
+                  <!-- Instagram SVG -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.41.59.22 1.01.48 1.45.92s.7.86.92 1.45c.17.46.35 1.26.4 2.43.06 1.26.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.4 2.43-.22.59-.48 1.01-.92 1.45s-.86.7-1.45.92c-.46.17-1.26.35-2.43.4-1.26.06-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.4a4.11 4.11 0 01-1.45-.92 4.11 4.11 0 01-.92-1.45c-.17-.46-.35-1.26-.4-2.43-.06-1.26-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.24-1.97.4-2.43.22-.59.48-1.01.92-1.45.43-.43.86-.7 1.45-.92.46-.17 1.26-.35 2.43-.4 1.26-.06 1.65-.07 4.85-.07zm0-2.16C8.69 0 8.25.01 7.05.07c-1.24.06-2.09.26-2.82.55A6.37 6.37 0 001.6 2.5a6.37 6.37 0 00-1.88 2.62c-.29.73-.49 1.58-.55 2.82C.01 8.25 0 8.69 0 12s.01 3.75.07 4.95c.06 1.24.26 2.09.55 2.82.35.9.85 1.71 1.88 2.62s1.72 1.53 2.62 1.88c.73.29 1.58.49 2.82.55 1.2.06 1.64.07 4.95.07s3.75-.01 4.95-.07c1.24-.06 2.09-.26 2.82-.55a6.37 6.37 0 002.62-1.88 6.37 6.37 0 001.88-2.62c.29-.73.49-1.58.55-2.82.06-1.2.07-1.64.07-4.95s-.01-3.75-.07-4.95c-.06-1.24-.26-2.09-.55-2.82a6.37 6.37 0 00-1.88-2.62A6.37 6.37 0 0019.77.62c-.73-.29-1.58-.49-2.82-.55C15.75.01 15.31 0 12 0zM12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a3.99 3.99 0 110-7.98 3.99 3.99 0 010 7.98zm6.4-11.72a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"
+                    />
+                  </svg>
                 </a>
               </div>
             </div>

@@ -1,10 +1,20 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-blog',
+  imports: [TranslatePipe],
   templateUrl: './blog.component.html',
+  styles: [``],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class BlogComponent implements AfterViewInit {
   @ViewChild('blogSection') blogSection!: ElementRef;

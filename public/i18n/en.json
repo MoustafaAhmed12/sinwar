@@ -3,9 +3,11 @@
     "LOGO_ALT": "Sinwar Logo",
     "HOME": "Home",
     "SERVICES": "Services",
-    "BLOG": "Blog",
+    "BLOG": "Feedback",
     "TEAM": "Team",
     "CONTACT": "Contact",
+    "PROJECTS": "Projects",
+    "client": "Our Clients",
     "FAQ": "FAQ",
     "PRICING": "Pricing",
     "THEME_TOGGLE": "Toggle Theme",
@@ -20,6 +22,22 @@
     "SUBTITLE": "Empowering businesses with innovative technology solutions. We help you transform your ideas into reality with cutting-edge software development and smart solutions.",
     "GET_STARTED": "Let's get started"
   },
+
+  "PORTFOLIO": {
+    "TITLE": "Our Portfolio",
+    "SUBTITLE": "Explore our latest projects and see how we've helped businesses transform their digital  presence.",
+    "TITLE1": "Academia Globe",
+    "SUBTITLE1": "A professional academy offering training and educational consultancy services for individuals and institutions, aiming to achieve academic and career excellence.",
+
+    "TITLE2": "Globe Stone Heli's",
+    "SUBTITLE2": "A leading company in the manufacturing and supply of natural stone and marble, providing high-quality products for residential and commercial projects in local and global markets.",
+
+    "TITLE3": "Jahbaz: Your Path to Distinguished Scientific Research",
+    "SUBTITLE3": "An advanced educational platform aimed at providing diverse training and educational courses, supporting personal and professional development for learners in various fields.",
+    "DONE": "Completed Project",
+    "VIEW_PROJECT": "VIEW PROJECT"
+  },
+
   "SERVICES": {
     "TITLE": "Our Services",
     "SUBTITLE": "Discover our comprehensive range of technology solutions designed to help your business grow",
@@ -61,6 +79,75 @@
     "Q5": {
       "TITLE": "Do you provide ongoing support?",
       "ANSWER": "Yes, we offer comprehensive support and maintenance services. This includes regular updates, bug fixes, performance optimization, and technical support. We can customize a support package based on your specific needs."
+    },
+    "FEED_BACK": {
+      "section_title": "What Our Clients Say",
+      "section_description": "We believe that great work speaks through client satisfaction. Here are some words from our partners about their experience working with us and the websites we created for them.",
+
+      "globestone_name": "Academia Globe",
+      "academia_name": "Globe Stone Heli's",
+      "jahbaz_name": "Jahbaz Academy",
+
+      "globestone_feedback": "We thank Sinwar Company for professionally developing our website. It clearly reflects our business in the natural stone industry and provides a smooth, user-friendly experience for our clients.",
+      "academia_feedback": "Our experience with Sinwar Company was excellent. They designed our academic website in a modern and user-friendly way, making it easier for our clients to explore our services.",
+      "jahbaz_feedback": "We appreciate Sinwar Company for designing the Jahbaz Academy platform. The layout is clean and effective, making it easy for learners to access the content effortlessly."
     }
+  },
+
+  "FEED_BACK": {
+    "section_title": "What Our Clients Say",
+    "section_description": "We believe that great work speaks through client satisfaction. Here are some words from our partners about their experience working with us and the websites we created for them.",
+
+    "globestone_name": "Academia Globe",
+    "academia_name": "Globe Stone Heli's",
+    "jahbaz_name": "Jahbaz Academy",
+
+    "globestone_feedback": "We thank Sinwar Company for professionally developing our website. It clearly reflects our business in the natural stone industry and provides a smooth, user-friendly experience for our clients.",
+    "academia_feedback": "Our experience with Sinwar Company was excellent. They designed our academic website in a modern and user-friendly way, making it easier for our clients to explore our services.",
+    "jahbaz_feedback": "We appreciate Sinwar Company for designing the Jahbaz Academy platform. The layout is clean and effective, making it easy for learners to access the content effortlessly."
+  },
+
+  "CONTACT": {
+    "contact_title": "Get in Touch",
+    "contact_subtitle": "Have a project in mind? Let's discuss how we can help you achieve your goals.",
+
+    "name": "Name",
+    "email": "Email",
+    "name_placeholder": "Your full name",
+    "email_placeholder": "Your email address",
+    "subject_placeholder": "What's this about?",
+    "message_placeholder": "Your message...",
+    "subject": "Subject",
+    "message": "Message",
+    "website": "Website",
+    "send_message": "Send Message",
+    "success_message": "Your message has been sent successfully! We will get back to you soon.",
+    "location": "Our Location",
+    "location_description": "I-City Building, East Nile, Minya – in front of January 25th Park. You can visit our office or contact us via phone or email.",
+    "follow_us": "Follow Us"
+  },
+
+  "Client": {
+    "clients_title": "Our Clients",
+    "clients_description": "We are proud to partner with a diverse range of clients across various industries. Our goal is always to deliver innovative solutions that meet their needs and contribute to their success."
+  },
+
+  "FOOTER": {
+    "QUICK_LINKS": "Quick Links",
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "BLOG": "Blog",
+    "CONTACT": "Contact",
+
+    "SERVICES_TITLE": "Services",
+    "WEB_DEVELOPMENT": "Web Development",
+    "UI_UX": "UI/UX Design",
+    "SEO": "SEO Optimization",
+    "MARKETING": "Digital Marketing",
+
+    "CONTACT_TITLE": "Contact Us",
+    "ADDRESS": "I-City Building, East Nile, Minya – in front of January 25th Park",
+
+    "COPYRIGHT": "© 2024 SINWAR. All rights reserved."
   }
 }
